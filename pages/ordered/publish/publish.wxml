@@ -1,0 +1,51 @@
+<!--pages/ordered/publish/publish.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="container">
+    <textarea bindinput="bindInput" placeholder='记录一下今天的精彩瞬间...' maxlength='1000' value='{{content}}'>
+    </textarea>
+    <view class='multimedia'>
+
+        <!-- <block wx:for="{{array}}" wx:key wx:for-item="image">
+          <image class="add_iamge" bindtap='previewImage' mode="scaleToFill" src="{{image}}" data-src='{{image}}'></image>
+        </block> -->
+
+
+      <block wx:for-items="{{array}}" wx:key="{{index}}" wx:for-item="image">
+        <view class="weui-uploader__file add_iamge1 " id="{{item}}" style="position: relative;margin-right: 0px;">
+          <image data-url="{{image}}" data-index="{{index}}" class="weui-uploader__img" data-t="maker" bindtap="previewImage" src="{{image}}" mode="scaleToFill" />
+          <view data-index="{{index}}" class="weui-badge" data-t="maker" bindtap="delete" style="position: absolute;bottom: +0.1em;right: +0.1em;">-</view>
+        </view>
+      </block>
+
+
+
+
+
+      <block wx:if="{{array.length >= 1 && array.length < 30}}">
+        <image bindtap='actionSheetTap' class="add_more" mode="scaleToFill" src="/image/rel_add_btn@3x.png"></image>
+      </block>
+
+      <block wx:elif="{{array.length ==0 && video.length == 0}}">
+        <image class="weui-uploader__file add_iamge" bindtap='actionSheetTap' mode="scaleToFill" src="/image/rel_add_photo_btn@3x.png"></image>
+        <image class=" add_video" bindtap="listenerBtnOpenVideo" mode="scaleToFill" src="/image/rel_add_video_btn@3x.png"></image>
+      </block>
+
+      <view wx:if="{{video.length != 0}}" class="weui-uploader__file add_iamge1 " id="{{item}}" style="position: relative;margin-right: 0px;">
+          <video wx:if="{{video.length != 0}}" src='{{video}}' class="add_video"></video>
+          <view  class="weui-badge" data-t="maker" bindtap="deleteVideo" style="position: absolute;bottom: -0.1em;right: +0.1em;">-</view>
+      </view>
+
+    </view>
+
+    <view class='bottom1'></view>
+
+    <view wx:if="{{content.length >= 1 || video.length != 0 || array.length >= 1}}" class='bottom_view'>
+      <view class='action_button' bindtap="publish" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" formType="submit">发布 </view>
+    </view>
+
+    <view wx:else class='bottom_view'>
+      <view class='gray_button' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" formType="submit">发布 </view>
+    </view>
+
+  </view>
+</form>

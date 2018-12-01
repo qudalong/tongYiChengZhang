@@ -1,0 +1,93 @@
+<!--pages/my/flower/flower.wxml-->
+<view class='head_background'></view>
+<view class='head_content'>
+  <view class='changeBaby'>
+    <image class='avatarUrl' mode='center' src='{{parent_image}}'></image>
+    <view id="aling_right">
+      <view class='name1'>
+        <view class='name'>{{studentName}}</view>
+        <view class='change'>
+        <text class='rules' bindtap='flowerRules'>规则</text>
+        <image class='into' src='/image/nav_btn_back@3x.png'></image>
+        </view>
+      </view>
+      <view class='total'>小红花剩余{{yearNum}}朵</view>
+    </view>
+  </view>
+
+  <view class='source' bindtap='flowerRules'>
+    <view class='dataSource'>
+      <image class="flower_image2" mode="scaleToFill" src="/image/baby_flower@3x.png" background-size="cover"></image>
+      <view class='itemName'>
+        送花
+      </view>
+    </view>
+    <view class='dataSource'>
+      <image class="flower_image2" mode="scaleToFill" src="/image/baby_dynamics_icon_color@3x.png" background-size="cover"></image>
+      <view class='itemName'>
+        动态
+      </view>
+    </view>
+    <view class='dataSource'>
+      <image class="flower_image2" mode="scaleToFill" src="/image/baby_talk@3x.png" background-size="cover"></image>
+      <view class='itemName'>
+        回复
+      </view>
+    </view>
+    <view class='dataSource'>
+      <image class="flower_image2" mode="scaleToFill" src="/image/baby_smile@3x.png" background-size="cover"></image>
+      <view class='itemName'>
+        评论
+      </view>
+    </view>
+    <view class='dataSource'>
+      <image class="flower_image2" mode="scaleToFill" src="/image/baby_share@3x.png" background-size="cover"></image>
+      <view class='itemName'>
+        分享
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='logList'>
+
+  <view class='logTitle'>
+    <text class='titleName1'>
+      红花来源
+    </text>
+    <text class='titleName2'>
+    获取数量
+    </text>
+    <text class='titleName3'>
+    获取时间
+    </text>
+  </view>
+
+
+  <block wx:for="{{rtnData}}" wx:key wx:for-item="item">
+
+    <view wx:if="{{index%2==0}}" class='logTitle2'>
+      <text class='titleName1'>
+      {{item.taskname}}
+    </text>
+      <text class='titleName2'>
+    +{{item.flowernum}}
+    </text>
+      <text class='titleName3'>
+    {{item.addtime}}
+    </text>
+    </view>
+
+    <view wx:if="{{index%2==1}}" class='logTitle'>
+      <text class='titleName1'>
+      {{item.taskname}}
+    </text>
+      <text class='titleName2'>
+    +{{item.flowernum}}
+    </text>
+      <text class='titleName3'>
+    {{item.addtime}}
+    </text>
+    </view>
+  </block>
+</view>

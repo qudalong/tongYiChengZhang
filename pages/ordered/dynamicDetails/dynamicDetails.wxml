@@ -1,0 +1,204 @@
+<!--pages/ordered/dynamicDetails/dynamicDetails.wxml-->
+<view class='notice_content'>
+
+  <block wx:for="{{dynamicList}}" wx:key="item">
+    <view class='view_item'>
+      <view class='item_content1'>
+        <!-- 发布人信息 -->
+        <view class='user_photo'>
+          <!-- {{item.senderPhoto}} -->
+          <image mode="center" class="user_image" src="{{item.senderPhoto}}" background-size="cover"></image>
+        </view>
+        <view class='user_info'>
+          <view>
+            <text class='user_name_text'>{{item.sender}}</text>
+          </view>
+          <text class='publish_time'>{{stime}}</text>
+        </view>
+      </view>
+
+      <view class='item_content2'>
+        {{item.content}}
+      </view>
+
+      <!-- <view class='item_content3'>
+        <image mode="scaleToFill" class='voice_image' src="/image/icon_by_voice@3x.png" background-size="cover"></image> 56s
+      </view> -->
+
+      <view wx:if="{{item.res.length!=0}}" class='item_content4'>
+        <block wx:if="{{item.res.length==1}}">
+          <block wx:for='{{item.res}}' wx:for-item="item2" wx:key="item2">
+            <image wx:if="{{item2.resType == 1}}" bindtap="previewImage" class="content_image1" mode="center" src="{{item2.path}}" background-size="cover"></image>
+            <video wx:if="{{item2.resType == 2}}" src='{{item2.path}}' class="content_image1"></video>
+          </block>
+        </block>
+        <block wx:if="{{item.res.length==2}}">
+          <block wx:for='{{item.res}}' wx:for-item="item2" wx:key="item2">
+            <image wx:if="{{item2.resType == 1}}" bindtap="previewImage" class="content_image2" mode="center" src="{{item2.path}}" background-size="cover"></image>
+            <video wx:if="{{item2.resType == 2}}" src='{{item2.path}}' class="content_image2"></video>
+          </block>
+        </block>
+        <block wx:if="{{item.res.length >= 3}}">
+          <block wx:for='{{item.res}}' wx:for-item="item2" wx:key="item2">
+
+
+
+            <view wx:if="{{index==0 || index==3 || index==6 || index==9 || index==12 || index==15 || index==18 || index==21 || index==24 || index==27}}" class="weui-uploader__file add_iamge2">
+              <image wx:if="{{item2.resType == 1}}" bindtap="previewImage" class="weui-uploader__img" src="{{item2.thumbpath}}" mode="center" />
+            </view>
+            <view wx:else class="weui-uploader__file add_iamge1">
+              <image wx:if="{{item2.resType == 1}}" bindtap="previewImage" class="weui-uploader__img" src="{{item2.thumbpath}}" mode="center" />
+            </view>
+
+
+            <!-- <image wx:if="{{item2.resType == 1}}" bindtap="previewImage" class="content_image3" mode="center" src="{{item2.path}}" background-size="cover"></image> -->
+
+
+
+
+
+            <video wx:if="{{item2.resType == 2}}" src='{{item2.path}}' class="content_image3"></video>
+          </block>
+        </block>
+      </view>
+      <view class='clear'></view>
+
+
+      <view wx:if="{{item.sendFlowerUser != null}}" class='item_content6'>
+        <!-- 送花人员列表 -->
+        <view class='send_flowers_user_list'>
+          <image class="item_image2" mode="scaleToFill" src="/image/flower_bg@3x.png"></image>
+          <block wx:for='{{item.sendFlowerUser}}' wx:for-item="item2" wx:key="item2">
+            <image wx:if="{{index <= 5}}" bindtap='flowerContributionRank' id='{{item.dynamicid}}' mode="scaleToFill" class="send_flowers_user1" src="{{item2.text}}" background-size="cover"></image>
+          </block>
+        </view>
+
+        <view class='link_icon' bindtap='flowerContributionRank' id='{{item.dynamicid}}'>
+          <image class='into' src='/image/nav_btn@3x.png'></image>
+        </view>
+
+      </view>
+
+    </view>
+
+  </block>
+</view>
+
+
+
+
+<view class='item_content5'>
+
+  <view class='commentaries_list'>
+    <text class='allComment'>全部评论</text>
+    <view class='all_commentaries'></view>
+    <!-- <image mode="scaleToFill" class="send_flowers_user" src="/image/mr.jpg" background-size="cover"></image> -->
+
+    <block wx:for='{{commonsList}}' wx:for-item="item" wx:key="item">
+      <!-- 回复 -->
+      <block wx:if='{{item.level==2}}'>
+        <view>
+          <view class='user_content'>
+            <view class='user_photo3'>
+              <!-- {{item.senderPhoto}} -->
+              <image mode="scaleToFill" class="send_flowers_user" src="{{item.senderPhoto}}" background-size="cover"></image>
+            </view>
+            <view class='user_info3'>
+              <view>
+
+                <text class='commentaries_user_text'>{{item.sender}}</text>
+                <text class='revert_text'>  回复  </text>
+                <text class='user_name_text'>{{item.replyer}}</text>
+                <view class='like'>
+                  <text class='number_text'>{{item.enjoyedNum}}  </text>
+                  <image wx:if="{{item.enjoyed==1}}" class="item_image3" mode="scaleToFill" src="/image/icon_like_mormal@3x.png"></image>
+                  <image wx:if="{{item.enjoyed==0}}" class="item_image3" mode="scaleToFill" src="/image/icon_like_press_gray@3x.png"></image>
+                </view>
+
+              </view>
+              <text class='publish_time3'>{{item.stime}}</text>
+            </view>
+          </view>
+          <view class='commentaries_content' bindtap='select_more' id='{{index}}'>
+            {{item.content}}
+            <view class='commentaries_content1'>
+              <view class='commentaries_content2'>{{item.replyer}}：</view>
+              {{item.replyerContent}}
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 评论 -->
+      <block wx:if='{{item.level==1}}'>
+        <view>
+          <view class='user_content'>
+            <view class='user_photo3'>
+              <image mode="scaleToFill" class="send_flowers_user" src="{{item.senderPhoto}}" background-size="cover"></image>
+            </view>
+            <view class='user_info3'>
+              <view>
+                <text class='commentaries_user_text'>{{item.sender}}</text>
+                <view class='like'>
+                  <text class='number_text'>{{item.enjoyedNum}}  </text>
+                  <image wx:if="{{item.enjoyed==1}}" class="item_image3" mode="scaleToFill" src="/image/icon_like_mormal@3x.png"></image>
+                  <image bindtap='enjoyed' id='{{index}}' wx:if="{{item.enjoyed==0}}" class="item_image3" mode="scaleToFill" src="/image/icon_like_press_gray@3x.png"></image>
+                </view>
+              </view>
+              <text class='publish_time3'>{{item.stime}}</text>
+            </view>
+          </view>
+          <view class='commentaries_content' bindtap='select_more' id='{{index}}'>
+            <text selectable='true'>{{item.content}}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+
+    <view wx:for='{{commonsList != null}}' wx:key class='page-head-line'></view>
+
+
+  </view>
+</view>
+<block wx:if="{{ifAction}}">
+  <view class='bottom1'></view>
+  <view class='talking'>
+    <view bindtap="comment" class='talk_input'>
+      我来说一说...
+    </view>
+    <view class='like'>
+      <image bindtap="comment" class="item_image3" mode="scaleToFill" src="/image/icon_talk.png"></image>
+      <text bindtap="comment" class='number_text1'>{{commentNum}}</text>
+
+      <image wx:if="{{send==0}}" bindtap='send_flowers' class="item_image3" mode="scaleToFill" src="/image/icon_gray_flower@3x.png"></image>
+      <image wx:else class="item_image3" mode="scaleToFill" src="/image/icon_red_flower@3x.png"></image>
+
+      <text wx:if="{{send==0}}" bindtap='send_flowers' class='number_text'>{{flowerNum}}</text>
+      <text wx:else class='number_text'>{{flowerNum}}</text>
+    </view>
+  </view>
+</block>
+
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <!-- <view class="drawer_title">弹窗标题</view> -->
+  <view class="drawer_content">
+    <!-- <view class="top bottom grid">
+      <label class="title col-0">备注</label>
+      <input class="input_base input_h30 col-1" focus='{{focus}}' name="bz"></input>
+    </view> -->
+    <textarea class='contents' fixed='true' show-confirm-bar='true' bindinput="bindInput" cursor-spacing="80" value='{{content}}' maxlength='300' auto-focus placeholder='我来说一说..'>
+    </textarea>
+    <view class='send1'>
+      <image class="item_image4" mode="scaleToFill" src="/image/icon_smile_gray@3x.png"></image>
+      <text wx:if="{{content.length == 0}}" class='scend2'>发送</text>
+      <text wx:else bindtap='commentaries' data-statu="close" class='scend'>发送</text>
+    </view>
+  </view>
+  <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> -->
+</view>

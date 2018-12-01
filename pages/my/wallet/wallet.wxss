@@ -1,0 +1,137 @@
+/* pages/my/wallet/wallet.wxss */
+
+.bgblack {
+  height: 241rpx;
+  background-color: #000;
+  padding: 0 56rpx;
+}
+
+.walletCard {
+  height: 241rpx;
+  background-image: url('https://dn-lbtclient.qbox.me/menu_default_bg@3x.png');
+  background-size: 100%;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bean{
+  font-size: 26px;
+}
+.accountLabel {
+  padding-top: 65rpx;
+  font-size: 16px;
+}
+
+.prepayItem {
+  padding: 32rpx;
+  background-image: url('https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1657714928,3688058397&fm=27&gp=0.jpg');
+  background-size: 100%;
+  color: #fff;
+  position: relative;
+}
+
+.prepayItem1 {
+  margin: 25rpx 30rpx 0 30rpx;
+  border-radius: 5px;
+}
+.on {
+  border: 2rpx solid red;
+}
+.prepayItem2 {
+  margin: 25rpx 30rpx 0 0;
+  border-radius: 5px;
+}
+
+.bdCount {
+  font-size: 32rpx;
+  margin-top: 8rpx;
+}
+
+.price {
+  font-size: 28rpx;
+}
+
+.giveItem {
+  margin-top: 7rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #000;
+  font-size: 23rpx;
+  background-color: #F4BA1C;
+  /* background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1512978722&di=71afdaa8d4f39ac270485158ebf5909c&src=http://imgsrc.baidu.com/forum/pic/item/e2f08118367adab487fd0fc88bd4b31c8601e471.jpg'); */
+  padding-left: 7px;
+  border-bottom-left-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+.giveItem2 {
+  margin-top: 0rpx;
+  position: absolute;
+  bottom: 0rpx;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+.icon_corner{
+  width: 20px;
+  height: 20px;
+  margin-bottom: 9rpx;
+  margin-right: 1rpx;
+  border-bottom-right-radius: 9rpx;
+}
+.bottom_view {
+  width: 100%;
+  height: 55px;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border-top: 0.3px solid #eeeeee;
+ 
+}
+
+.bottom1 {
+  height: 50px;
+  margin-top: 10px;
+}
+
+.total_text {
+  width: 55%;
+  display: inline-block;
+  margin-bottom: 0px;
+  padding-left: 5%;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.total_text2 {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.total_text3 {
+  color: rgb(244, 67, 54);
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.end_date {
+  font-size: 12px;
+  margin-top: 0px;
+}
+
+.order_button {
+  width: 40%;
+  height: 55px;
+  color: white;
+  background-color: rgb(0, 204, 153);
+  display: inline-block;
+  text-align: center;
+  line-height:55px;
+}
+.textVal{
+  margin-top: 0px;
+}
+.dd{
+   display: inline-block;
+   width: 50%;
+}

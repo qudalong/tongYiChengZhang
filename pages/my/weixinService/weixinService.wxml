@@ -1,0 +1,4 @@
+<!--pages/my/weixinService/weixinService.wxml-->
+<view class='content'>
+<button  class='login_button' bindtap='saveImgToPhotosAlbumTap' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"> 保存二维码到相册 </button>
+</view>

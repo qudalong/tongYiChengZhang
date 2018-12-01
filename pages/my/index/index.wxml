@@ -1,0 +1,150 @@
+<!--pages/my/index/index.wxml-->
+
+<view class='head_background'></view>
+<view class='head_content'>
+  <image class='head_image' src='{{avatarUrl}}'></image>
+  <view class='NickName'>
+    <text class='parentsNick'>{{nickName}}</text>
+    <image class='isBind' bindtap='canceBingDing' src='/image/wechat_fuwu@3x.png'></image>
+    <!-- <text >解除绑定</text> -->
+  </view>
+  <view class='changeBaby'>
+    <image class='babyImag' mode='center' src='{{parent_image}}'></image>
+    <view class='babyName'>{{studentName}}</view>
+    <view class='change'>
+      <text wx:if='{{selectStudents==1}}' bindtap="powerDrawer" data-statu="open" style='font-size:30rpx;display: inline-block;color: #00cc99;line-height:3.5em;'>切换宝宝</text>
+      <image class='into' src='/image/nav_btn_back@3x.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='MyWallet'>
+
+  <view class='wallet' bindtap='wallet'>
+    <view class='walletTitle'>我的钱包</view>
+    <view class='count'>{{walletNum}}贝豆</view>
+    <view class='wallet_lable'>去充值</view>
+  </view>
+
+  <view style='border-left: 0.5px solid #eeeeee;' class='wallet' bindtap='flower'>
+    <view class='walletTitle'>小红花明细</view>
+    <view class='count'>{{flowerNum}}朵</view>
+    <view class='flower_lable'>获红花</view>
+  </view>
+
+</view>
+
+<!--menu  -->
+<view class='list'>
+  <view style='background: #fff;float:left;border-radius: 5px;'>
+
+    <view class='baby_left babyDybnamic' bindtap='babyDybnamic'>
+      <view style='width: 40px;margin: 0 auto; margin-top: 10px;'>
+        <image style='width: 40px;height: 40px;' src='../../../image/baby_dynamics_icon_color@3x.png'></image>
+      </view>
+      <view class='view'>
+        <text>宝宝动态</text>
+      </view>
+      <view style='text-align: center;'>
+        <text style="font-size: 12px;color: #888;">宝宝成长，记录时光</text>
+      </view>
+    </view>
+
+    <view class='baby babyAttend' bindtap='babyAttend'>
+      <view style='width: 40px;margin: 0 auto; margin-top: 10px;'>
+        <image style='width: 40px;height: 40px;' src='../../../image/baby_attendance_icon_color@3x.png'></image>
+      </view>
+      <view class='view'>
+        <text>宝宝考勤</text>
+      </view>
+      <view style='text-align: center;'>
+        <text style="font-size: 12px;color: #888;">出入平安，体温预警</text>
+      </view>
+    </view>
+
+    <view class='baby_left orderBusiness' bindtap='orderBusiness'>
+      <view style='width: 40px;margin: 0 auto; margin-top: 10px;'>
+        <image style='width: 40px;height: 40px;' src='/image/baby_business_order@3x.png'></image>
+      </view>
+      <view class='view'>
+        <text>业务订购</text>
+      </view>
+      <view style='text-align: center;'>
+        <text style="font-size: 12px;color: #888;">业务订购，享受服务</text>
+      </view>
+    </view>
+
+    <!-- <view class='baby babyMall' bindtap='shopping'>
+      <view style='width: 40px;margin: 0 auto; margin-top: 10px;'>
+        <image style='width: 40px;height: 40px;' src='../../../image/baby_mark@3x.png'></image>
+      </view>
+      <view style='text-align: center;'>
+        <text style="font-size: 14px;">童忆商城</text>
+      </view>
+      <view style='text-align: center;'>
+        <text style="font-size: 12px;color: #888;">儿童绘本，益智玩具</text>
+      </view>
+    </view> -->
+
+    <view class='baby orderBusiness' bindtap='weixinService'>
+      <view style='width: 40px;margin: 0 auto; margin-top: 10px;'>
+        <image style='width: 40px;height: 40px;' src='../../../image/wechat_fuwu@3x.png'></image>
+      </view>
+      <view class='view'>
+        <text>微信服务</text>
+      </view>
+      <view style='text-align: center;'>
+        <text style="font-size: 12px;color: #888;">微信提现，园所通知</text>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+  <!--drawer content-->
+  <view class="drawer_title">切换宝宝</view>
+  <view class="drawer_content">
+
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell weui-check__label" wx:for="{{studentList}}" wx:key="{{item}}">
+
+            <view class="weui-cell__hd">
+              <radio wx:if="{{item.studentID == studentID}}" value="{{index}}" checked="checked" />
+              <radio wx:else value="{{index}}" checked="" />
+            </view>
+            <view class="weui-cell__bd">{{item.studentName}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+  </view>
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+</view>
+
+
+
+<view class='tabBarBottom'></view>
+<view class='tabBar'>
+  <view class='center' bindtap='center'>
+    <image bindtap='center' class="centerImage" mode="scaleToFill" src="/image/home_page@3x.png"></image>
+    <view class='tabBarText'>首页</view>
+  </view>
+
+  <view class='public' bindtap='public'>
+    <image bindtap='public' class="publicImage" mode="scaleToFill" src="/image/add_to@3x.png"></image>
+  </view>
+
+  <view class='my' bindtap='my'>
+    <image bindtap='my' class="myImage" mode="scaleToFill" src="/image/wode2@3x.png"></image>
+    <view class='tabBarText'>我的</view>
+  </view>
+</view>

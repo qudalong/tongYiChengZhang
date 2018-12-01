@@ -1,0 +1,118 @@
+<!--pages/notOrdered/orderDetail/orderDetail.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="container">
+    <view class="logo">
+      <image class="logo-avatar" mode="widthFix" src="{{logo}}" background-size="cover"></image>
+    </view>
+
+    <view class='item_lists'>
+      <view class='item_list'>
+        <text class='name_text_left'>宝宝姓名</text>
+        <text class='name_text_right'>{{studentName}} </text>
+      </view>
+      <view class='page-head-line'></view>
+
+      <view class='item_list'>
+        <text class='name_text_left'>订购名称</text>
+        <text class='name_text_right'>{{name}} </text>
+      </view>
+      <view class='page-head-line'></view>
+
+
+      <view wx:if="{{self==2 && businessStatus==1}}" class='item_list'>
+        <text class='name_text_left'>验证码</text>
+        <input class='code_text_right' type='number' name='code' value='{{codeValue}}' bindinput="bindCodeInput" maxlength='6' placeholder='请输入验证码（必填）' />
+      </view>
+
+      <view wx:if="{{self==1 && businessStatus==1}}" class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd2">
+            <view class="weui-label">订购时长</view>
+          </view>
+          <view class="weui-cell__bd2">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-input">
+              {{array[index]}}
+              <image class='into' src='/image/nav_btn@3x.png'></image>
+              </view>
+
+            </picker>
+          </view>
+        </view>
+      </view>
+
+       <view wx:if="{{businessStatus==3}}" class='item_list'>
+        <text class='name_text_left'>开通状态</text>
+        <text class='name_text_right2'>已订购 </text>
+      </view>
+      <view wx:if="{{businessStatus==3}}" class='page-head-line'></view>
+      <view wx:if="{{businessStatus==3}}" class='item_list'>
+        <text class='name_text_left'>开通方式</text>
+
+        <text wx:if="{{self==1}}" class='name_text_right'>网上订购 </text>
+        <text wx:if="{{self==2}}" class='name_text_right'>短信订购 </text>
+      </view> 
+
+    </view>
+
+
+    <view class='item_lists2' wx:if="{{businessStatus==3}}">
+
+      <view wx:if="{{businessStatus==3 && self==1}}" class='item_list'>
+        <text class='name_text_left'>订购时长</text>
+        <text class='name_text_right'>{{payMonth}}</text>
+      </view>
+      <view wx:if="{{businessStatus==3}}" class='page-head-line'></view>
+      <view wx:if="{{businessStatus==3}}" class='item_list'>
+        <text class='name_text_left'>订购日期</text>
+        <text class='name_text_right'>{{serverBeginTime}} </text>
+      </view>
+      <view wx:if="{{businessStatus==3}}" class='page-head-line'></view>
+      <view wx:if="{{businessStatus==3}}" class='item_list'>
+        <text class='name_text_left'>截止日期</text>
+        <text class='name_text_right'>{{serverEndTime}}  </text>
+      </view>
+
+    </view>
+
+    <text wx:if="{{self==2}}" class="sms_tips_text">短信订购仅限省内中国移动用户生效，如果您是省内移动用户，请使用您的当前手机登录账号：18699667788 编辑短信：3695到10086可以获取6位数字订购验证码，短信订购24小时生效。</text>
+
+    <view class='business_rofile'>
+      <view class='item_list'>
+        <text class='name_text_left2'>业务简介</text>
+      </view>
+      <view class='page-head-line2'></view>
+      <view class='desc'>{{desc}}</view>
+    </view>
+
+    <view wx:if="{{businessStatus!=3}}" class='bottom1'></view>
+
+    <view wx:if="{{businessStatus!=3}}" class='bottom_view'>
+
+       <view wx:if="{{self==2}}" class='total_text1'>
+          {{price}}元/月
+      </view> 
+
+       <view wx:else class='total_text'>
+        <view class='total_text2'>
+          合计：
+          <text class='total_text3'>￥{{price*monthNum}}.00</text>
+        </view>
+        <view class='end_date'>到期时间：{{endTime}}</view>
+      </view> 
+
+
+
+      <view class='order_button' bindtap="pay_order" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" formType="submit">
+       立即订购 
+      </view>
+    </view>
+
+
+
+
+
+
+
+  </view>
+</form>

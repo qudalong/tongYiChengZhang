@@ -1,0 +1,157 @@
+<!--pages/ordered/teacherRank/teacherRank.wxml-->
+<view class="container">
+  <view class='item_lists'>
+    <view class='item_list'>
+      <text class='tip_text'>通过给老师发布的动态进行评论和送花冲榜</text>
+
+
+      <!-- <view style="white-space: nowrap;" class="box" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="club" animation="{{animation1}}" bindtap="scrollLeft">
+          <image class='image2' src="{{rewardRank[0].photopath}}" />
+           <view class="class_cover">第{{rewardRank[0].sort}}名</view> 
+          <text class='text2'>{{rewardRank[0].name}}</text>
+          <view class='renk_t'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>
+            <text>{{rewardRank[0].flowernum}}</text>
+          </view>
+        </view>
+        <view class="club" animation="{{animation2}}" bindtap="scrollLeft">
+          <image class='image2' src="{{rewardRank[1].photopath}}" />
+          <view class="class_cover">第{{rewardRank[0].sort}}名</view> 
+          <text class='text2'>{{rewardRank[1].name}}</text>
+          <view class='renk_t'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>
+            <text>{{rewardRank[1].flowernum}}</text>
+          </view>
+        </view>
+        <view class="club" animation="{{animation3}}">
+          <image class='image2' src="{{rewardRank[2].photopath}}" />
+          <view class="class_cover">第{{rewardRank[2].sort}}名</view> 
+          <text class='text2'>{{rewardRank[2].name}}</text>
+          <view class='renk_t'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>
+            <text class='flower_num'>{{rewardRank[2].flowernum}}</text>
+          </view>
+        </view>
+        <view class="club" animation="{{animation4}}" bindtap="scrollRight">
+          <image class='image2' src="{{rewardRank[3].photopath}}" />
+          <view class="class_cover">第{{rewardRank[3].sort}}名</view> 
+          <text class='text2'>{{rewardRank[3].name}}</text>
+          <view class='renk_t'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>
+            <text class='flower_num'>{{rewardRank[3].flowernum}}</text>
+          </view>
+        </view>
+
+          <view class="club" animation="{{animation5}}" bindtap="scrollRight">
+            <image class='image2' src="{{rewardRank[4].photopath}}" />
+            <view class="class_cover">第{{rewardRank[4].sort}}名</view> 
+            <text class='text2'>{{rewardRank[4].name}}</text>
+            <view class='renk_t'>
+              <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>
+              <text class='flower_num'>{{rewardRank[4].flowernum}}</text>
+            </view>
+          </view>
+      </view> -->
+
+     <scroll-view scroll-x="true">
+        <view class="uploadWrap" scroll-x="true">
+
+          <block wx:for="{{rewardRank}}" wx:key="item">
+            <view class="upload_Item class_outer">
+              <view>
+              <!-- /image/mr.jpg -->
+                <image class="upload_Item_img" mode='center' src="{{item.photopath}}"></image>
+                <view class="class_cover2">第{{rewardRank[4].sort}}名</view> 
+              </view>
+              <view class='item_name'>{{item.name}}</view>
+              <view class='flower_num'>
+                <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>{{item.flowernum}}
+              </view>
+            </view>
+          </block>
+
+        </view>
+      </scroll-view>
+
+    </view>
+  </view>
+
+  <view class='notice_content'>
+
+    <view class='view_item'>
+
+      <block wx:for="{{rtnData}}" wx:key="item">
+
+        <block wx:if="{{index==0}}">
+          <view class='item_content1'>
+            <view class='sort_num1'>{{item.sort}}</view>
+            <view class='user_photo'>
+              <view class='imgContainer3'>
+                <image class="img1" mode="scaleToFill" src="/image/rank_head_first_50@3x.png"> </image>
+                <image class="img2" mode="center" src="{{item.photopath}}" background-size="cover"></image>
+              </view>
+            </view>
+            <view class='user_info'>
+              <view class='view'>
+                <text class='user_name_text2'>{{item.name}}</text>
+              </view>
+              <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+            </view>
+          </view>
+        </block>
+
+        <block wx:if="{{index==1}}">
+          <view class='item_content1'>
+            <view class='sort_num2'>{{item.sort}}</view>
+            <view class='user_photo'>
+              <view class='imgContainer3'>
+                <image class="img1" mode="scaleToFill" src="/image/rank_head_second_45@3x.png"> </image>
+                <image class="img2" mode="center" src="{{item.photopath}}" background-size="cover"></image>
+              </view>
+            </view>
+            <view class='user_info'>
+              <view class='view'>
+                <text class='user_name_text2'>{{item.name}}</text>
+              </view>
+              <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+            </view>
+          </view>
+        </block>
+
+        <block wx:if="{{index==2}}">
+          <view class='item_content1'>
+            <view class='sort_num3'>{{item.sort}}</view>
+            <view class='user_photo'>
+              <view class='imgContainer3'>
+                <image class="img1" mode="scaleToFill" src="/image/rank_head_third_45@3x.png"> </image>
+                <image class="img2" mode="center" src="{{item.photopath}}" background-size="cover"></image>
+              </view>
+            </view>
+            <view class='user_info'>
+              <view class='view'>
+                <text class='user_name_text2'>{{item.name}}</text>
+              </view>
+              <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+            </view>
+          </view>
+        </block>
+
+        <block wx:if="{{index > 2}}">
+          <view class='item_content1'>
+            <view class='sort_num'>{{item.sort}}</view>
+            <view class='user_photo'>
+              <image mode="center" class="user_image" src="{{item.photopath}}" background-size="cover"></image>
+            </view>
+            <view class='user_info'>
+              <view class='view'>
+                <text class='user_name_text2'>{{item.name}}</text>
+              </view>
+              <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+</view>

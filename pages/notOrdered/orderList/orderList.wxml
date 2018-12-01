@@ -1,0 +1,36 @@
+<!--pages/notOrdered/orderList/orderList.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">短信订购</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">网上订购</view>
+  <view wx:if="{{currentTab==0}}" class='on1'> </view>
+  <view wx:if="{{currentTab==1}}" class='on2'> </view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+  <!-- 短信订购 -->
+  <swiper-item>
+    <view class='items' wx:for="{{spServices}}" wx:key wx:for-item="item">
+      <image bindtap="roder_detail" id='{{index}}' class="order_image" src="{{item.icon}}" background-size="cover"></image>
+      <text bindtap="roder_detail" id='{{index}}' class='name_text'>{{item.servicename}}</text>
+      <text wx:if="{{item.isorder==0}}" class='no_order_text' bindtap="roder_detail" id='{{index}}'>未订购</text>
+      <text wx:else class='order_text' bindtap="roder_detail" id='{{index}}'>已订购</text>
+      <image bindtap="roder_detail" id='{{index}}' class='into' src='/image/nav_btn@3x.png'></image>
+
+      <view wx:if="{{spServices.length != index+1}}" class='page-head-line'></view>
+    </view>
+
+  </swiper-item>
+  <!-- 网上订购 -->
+  <swiper-item>
+    <view class='items' wx:for="{{noSpServices}}" wx:key wx:for-item="item">
+      <image bindtap="roder_detail" id='{{index}}' class="order_image" src="{{item.icon}}" background-size="cover"></image>
+      <text bindtap="roder_detail" id='{{index}}' class='name_text'>{{item.servicename}}</text>
+      <text wx:if="{{item.isorder==0}}" class='no_order_text' bindtap="roder_detail" id='{{index}}'>未订购</text>
+      <text wx:else class='order_text' bindtap="roder_detail" id='{{index}}'>已订购</text>
+      <image bindtap="roder_detail" id='{{index}}' class='into' src='/image/nav_btn@3x.png'></image>
+    <!-- <text class='into'>></text> -->
+      <view wx:if="{{spServices.length != index+1}}" class='page-head-line'></view>
+    </view>
+
+  </swiper-item>
+</swiper>

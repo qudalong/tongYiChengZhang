@@ -1,0 +1,95 @@
+/* pages/login/userLogin/userLogin.wxss */
+
+.container {
+  padding: 0rpx 0;
+}
+
+.form {
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 5rpx;
+}
+
+.icon_delet {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 5rpx;
+  align-items: right;
+  display: inline-block;
+}
+
+.edition_text {
+  font-size: 12px;
+  color: white;
+  background-color: #ff703d;
+  border-radius: 84px;
+  padding: 2px 5px;
+}
+
+.get_code_text {
+  color: #0c9;
+  /* display: inline-block; */
+  font-size: 16p;
+  padding-bottom: 15px;
+  float: right;
+}
+
+.reset_code_text {
+  color: #aaa;
+  /* display: inline-block; */
+  font-size: 16p;
+  padding-bottom: 15px;
+   float: right;
+}
+
+.phone {
+  align-items: left;
+  margin-top: 60px;
+  width: 85%;
+  border-bottom: 0.5px solid #eee;
+}
+
+.phoneInput {
+  display: inline-block;
+  width: 90%;
+  padding-bottom: 15px;
+}
+
+.codeInput {
+  display: inline-block;
+  width: 62%;
+  margin-bottom: -5px;
+}
+
+.verification_code {
+  align-items: left;
+  margin-top: 20px;
+  width: 85%;
+  border-bottom: 0.5px solid #eee;
+}
+
+.gray_button {
+  width: 80%;
+  margin-top: 20px;
+  border-radius: 44px;
+  color: white;
+  background-color: rgb(187, 187, 187);
+}
+
+.login_button {
+  width: 80%;
+  margin-top: 20px;
+  border-radius: 44px;
+  color: white;
+  background-color: rgb(0, 204, 153);
+}

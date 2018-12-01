@@ -1,0 +1,10 @@
+<!--pages/ordered/comment/comment.wxml-->
+<view class="drawer_content">
+  <textarea class='contents' focus='true' fixed='true' bindinput="bindInput" cursor-spacing="80" value='{{content}}' maxlength='300' placeholder='我来说一说..'>
+  </textarea>
+  <view class='send1'>
+    <!-- <image class="item_image4" mode="scaleToFill" src="/image/icon_smile_gray@3x.png"></image> -->
+    <text wx:if="{{content.length == 0}}" class='scend2'>发送</text>
+    <text wx:else bindtap='scend' data-statu="close" class='scend'>发送</text>
+  </view>
+</view>

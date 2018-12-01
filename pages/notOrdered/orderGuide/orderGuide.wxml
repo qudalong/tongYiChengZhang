@@ -1,0 +1,30 @@
+<!--pages/notOrdered/orderGuide/orderGuide.wxml-->
+<view class="container">
+  <view class="logo">
+    <image class="logo-avatar" mode="aspectFit" src="/image/empty_page@3x.png"></image>
+  </view>
+  <text class="edition_text">您还没有订购业务</text>
+  <text class='taps_text'>
+  请点击下面订购按钮或联系所在班级班主任
+  进行订购，查看宝宝动态
+  </text>
+  <button class='login_button' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="roder_list"> 立即订购 </button>
+</view>
+
+
+<view class='tabBarBottom'></view>
+<view class='tabBar'>
+  <view class='center' bindtap='center'>
+    <image bindtap='center' class="centerImage" mode="scaleToFill" src="/image/home_page_green@3x.png"></image>
+    <view class='tabBarText'>首页</view>
+  </view>
+
+  <view class='public' bindtap='public'>
+    <image bindtap='public' class="publicImage" mode="scaleToFill" src="/image/add_to@3x.png"></image>
+  </view>
+
+  <view class='my' bindtap='my'>
+    <image bindtap='my' class="myImage" mode="scaleToFill" src="/image/wode2_gray@3x.png"></image>
+    <view class='tabBarText'>我的</view>
+  </view>
+</view>

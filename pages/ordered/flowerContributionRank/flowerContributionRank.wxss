@@ -1,0 +1,52 @@
+/* pages/ordered/flowerContributionRank/flowerContributionRank.wxss */
+@import "/pages/common/lib/weui.wxss";
+
+page {
+  display: block;
+  min-height: 100%;
+}
+
+.container {
+  padding: 0rpx 0;
+}
+
+.notice_content {
+  margin-top: 0px;
+  width: 100%;
+  background-color: white;
+}
+
+.view_item {
+  margin: 10px;
+}
+
+.item_content1 {
+  height: 80px;
+}
+
+.user_photo {
+  width: 20%;
+  height: 69px;
+  float: left;
+}
+
+.user_info {
+  width: 65%;
+  text-align: left;
+  height: 69px;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.user_image {
+  width: 55px;
+  height: 55px;
+  border: 4.69rpx solid #fff;
+  border-radius: 100rpx;
+  margin: 10rpx;
+}
+
+.user_name_text2 {
+  display: inline-block;
+  font-size: 16px;
+}

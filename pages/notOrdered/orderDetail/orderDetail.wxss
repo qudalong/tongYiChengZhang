@@ -1,0 +1,230 @@
+/* pages/notOrdered/orderDetail/orderDetail.wxss */
+@import "/pages/common/lib/weui.wxss";
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: rgb(245, 245, 245);
+}
+
+.container {
+  padding: 0rpx 0;
+}
+
+.form {
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.logo-avatar {
+  width: 100%;
+}
+
+.advice_text {
+  color: white;
+  background-color: #ff9800;
+  padding: 2px 5px;
+  text-align: center;
+}
+
+.sms_tips_text {
+  font-size: 24rpx;
+  color: rgb(244, 67, 54);
+  background-color: rgb(255, 247, 153);
+  padding: 16rpx 30rpx 16rpx 30rpx;
+  text-align: left;
+  height: 120rpx;
+}
+
+.item_lists {
+  align-items: center;
+  margin-top: 0px;
+  width: 100%;
+  background-color: white;
+}
+
+.item_lists2 {
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+.item_list {
+  text-align: left;
+  width: 95%;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.name_text_left {
+  display: inline-block;
+  font-size: 32rpx;
+  width: 30%;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.name_text_left2 {
+  display: inline-block;
+  font-size: 32rpx;
+  width: 30%;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.name_text_right {
+  display: inline-block;
+  text-align: right;
+  width: 65%;
+  font-size: 32rpx;
+}
+
+.name_text_right2 {
+  display: inline-block;
+  text-align: right;
+  width: 65%;
+  color: rgb(0, 204, 153);
+  font-size: 32rpx;
+}
+
+.code_text_right {
+  display: inline-block;
+  text-align: left;
+  font-size: 32rpx;
+}
+
+input {
+  overflow: visible;
+}
+
+.codeInput {
+  display: inline-block;
+  width: 62%;
+}
+
+.page-head-line {
+  width: 96%;
+  height: 3rpx;
+  margin-left: 30rpx;
+  border-bottom: 0.5px solid rgb(245, 245, 245);
+}
+
+.page-head-line2 {
+  width: 96%;
+  height: 3rpx;
+  margin-left: 30rpx;
+  border-bottom: 0.5px solid rgb(245, 245, 245);
+}
+
+.weui-cell__bd2 {
+  text-align: right;
+  width: 32%;
+}
+
+.weui-cell__hd2 {
+  text-align: left;
+  width: 68%;
+  font-size: 32rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.business_rofile {
+  margin-top: 20rpx;
+  /* width: 93%;
+  padding-left: 30rpx;
+  padding-right: 30rpx; */
+  font-size: 30rpx;
+  background-color: white;
+}
+
+.business_rofile2 {
+  margin: 10px 10px 10px 10px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.desc {
+  color: rgb(51, 51, 51);
+  margin: 30rpx;
+}
+
+.bottom_view {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: white;
+}
+
+.bottom1 {
+  height: 100rpx;
+  margin-top: 20rpx;
+}
+
+.total_text1 {
+  width: 56%;
+  display: inline-block;
+  padding-left: 30rpx;
+  font-size: 36rpx;
+  color: rgb(244, 67, 54);
+  padding-top: 20rpx;
+}
+
+.total_text {
+  width: 56%;
+  height: 100rpx;
+  display: inline-block;
+  padding-left: 30rpx;
+}
+
+.total_text2 {
+  display: inline-block;
+  font-size: 32rpx;
+}
+
+.total_text3 {
+  color: rgb(244, 67, 54);
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.end_date {
+  font-size: 20rpx;
+  margin-top: 0rpx;
+  color: rgb(102, 102, 102);
+}
+
+.order_button {
+  width: 40%;
+  height: 100rpx;
+  color: white;
+  background-color: rgb(0, 204, 153);
+  text-align: center;
+  float: right;
+  line-height:100rpx;
+  font-size:36rpx;
+
+}
+
+.order_button_text {
+  height: 100rpx;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  font-size: 36rpx;
+}
+
+.into {
+  display: inline-block;
+  text-align: right;
+  margin-left: 0rpx;
+  width: 18rpx;
+  height: 26rpx;
+  margin-bottom: -1px;
+}

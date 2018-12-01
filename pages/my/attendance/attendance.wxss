@@ -1,0 +1,144 @@
+/* pages/my/attendance/attendance.wxss */
+
+/* 这个应该是全局配置 */
+
+page {
+  background-color: #f5f5f5;
+}
+
+/* 这个应该是通用组件 */
+
+/* 卡片 */
+.card {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 0rpx;
+  border-top: 0.5px solid #eeeeee;
+}
+.normalPadding2 {
+  padding: 15rpx 30rpx 15rpx 30rpx;
+}
+.normalPadding1 {
+  padding: 25rpx 0rpx 25rpx 0rpx;
+  background-color: white;
+  width: 32%;
+}
+.normalPadding {
+  padding: 15rpx 0rpx;
+  border-bottom: 0.5px solid #eeeeee;
+  width: 90%;
+  margin-left: 30rpx;
+}
+.changeDate{
+   padding: 25rpx 25rpx 25rpx 25rpx;
+  background-color: white;
+}
+.to_left{
+  margin-right: 20rpx;
+  color:#888;
+  width: 30%;
+  text-align: right;
+}
+.to_right{
+  display: inline;
+  margin-left: 20rpx;
+  color:#888;
+
+}
+/* 出勤天数特殊样式间距 */
+
+.attendenceDayCard {
+  padding: 45rpx;
+}
+
+.day {
+  color: #0c9;
+  font-size: 44rpx;
+}
+
+.tips {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.picker {
+  font-size: 28rpx;
+ display: inline;
+}
+.picker1 {
+  font-size: 28rpx;
+  
+}
+.attendTips {
+  display: inline;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 20%;
+  padding-right: 35rpx;
+}
+
+.right image {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.textTips {
+  color: #888;
+  font-size: 28rpx;
+}
+
+.attendTime {
+  line-height: 2.3em;
+  color: #111;
+  font-size: 32rpx;
+}
+
+.temper {
+  margin-left: 36rpx;
+  color: #16c218;
+  font-size: 32rpx;
+}
+
+.temper1 {
+  margin-left: 36rpx;
+  color: #16c218;
+  font-size: 32rpx;
+}
+
+.temper2 {
+  margin-left: 36rpx;
+  color: #ff8b00;
+  font-size: 32rpx;
+}
+
+.temper3 {
+  margin-left: 36rpx;
+  color: #f11312;
+  font-size: 32rpx;
+}
+
+.temper4 {
+  margin-left: 36rpx;
+  color: #f11312;
+  font-size: 32rpx;
+}
+
+.unattend {
+  color: rgb(244, 67, 54);
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+.weui-media-box:before {
+position:absolute;
+top:0;
+right:0;
+height:1px;
+border-top:0rpx;
+color:#E5E5E5;
+
+}

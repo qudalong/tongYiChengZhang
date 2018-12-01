@@ -1,0 +1,22 @@
+<!--pages/ordered/flowerContributionRank/flowerContributionRank.wxml-->
+<view class="container">
+  <view class='notice_content'>
+    <view class='view_item'>
+
+      <block wx:for='{{arrarList}}' wx:for-item="item" wx:key="item">
+        <view class='item_content1'>
+          <view class='user_photo'>
+<!-- {{item.photopath}} -->
+            <image mode="center" class="user_image" src="{{item.photopath}}" background-size="cover"></image>
+          </view>
+          <view class='user_info'>
+            <view>
+              <text class='user_name_text2'>{{item.name}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+<!--pages/my/wallet/wallet.wxml-->
+<view class='bgblack'>
+  <view class='walletCard alignCenter'>
+    <view class='accountLabel'>账户余额</view>
+    <view class='bean'>{{remainbean}}贝豆</view>
+  </view>
+</view>
+
+<block wx:for="{{rtnData}}" wx:key wx:for-item="item">
+
+  <view class="dd" wx:if='{{index%2==0}}'>
+    <view class="prepayItem prepayItem1 alignCenter {{currentIndex==index ? 'on' : ''}}" bindtap='selected' id="{{index}}">
+      <view class='bdCount'>{{item.beans}}贝豆</view>
+      <view class='price'>￥{{item.fee}}</view>
+      <view class='giveItem'>赠{{item.plus}}贝豆</view>
+      <view class='giveItem2' wx:if="{{currentIndex==index}}">
+        <image class='icon_corner' src='/image/icon_corner@3x.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="dd" wx:if='{{index%2==1}}'>
+    <view class="prepayItem prepayItem2 alignCenter {{currentIndex==index ? 'on' : ''}}" bindtap='selected' id="{{index}}">
+      <view class='bdCount'>{{item.beans}}贝豆</view>
+      <view class='price'>￥{{item.fee}}</view>
+      <view class='giveItem'>赠{{item.plus}}贝豆</view>
+      <view class='giveItem2' wx:if="{{currentIndex==index}}">
+        <image class='icon_corner' src='/image/icon_corner@3x.png'></image>
+      </view>
+    </view>
+  </view>
+
+</block>
+
+
+
+
+
+<!-- 
+<view class="weui-flex alignCenter">
+  <view class="weui-flex__item">
+    <view class='prepayItem prepayItem1 alignCenter'>
+      <view class='bdCount'>1000贝豆</view>
+      <view class='price'>￥10</view>
+      <view class='giveItem'>赠30贝豆</view>
+    </view>
+  </view>
+
+  <view class="weui-flex__item">
+    <view class='prepayItem prepayItem2 alignCenter'>
+      <view class='bdCount'>1000贝豆</view>
+      <view class='price'>￥10</view>
+      <view class='giveItem'>赠30贝豆</view>
+    </view>
+  </view>
+</view> -->
+
+<view wx:if="{{businessStatus!=3}}" class='bottom_view'>
+  <view class='total_text'>
+    充{{money}}元得{{beans}}贝豆
+
+  </view>
+
+  <view class='order_button' bindtap="pay_order" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" formType="submit">
+    <text class='textVal'>立即充值 </text>
+  </view>
+
+</view>

@@ -1,0 +1,4 @@
+<!--pages/my/shopping/shopping.wxml-->
+<view>
+ <web-view src="{{shop}}"></web-view>
+</view>

@@ -1,0 +1,46 @@
+{
+  "pages": [
+
+    
+    "pages/ordered/notice/notice",
+    
+    "pages/login/userLogin/userLogin",
+    "pages/login/userInfo/userInfo",
+   
+    "pages/notOrdered/orderList/orderList",
+    "pages/notOrdered/orderDetail/orderDetail",
+    "pages/notOrdered/orderGuide/orderGuide", 
+
+    
+    "pages/ordered/dynamicDetails/dynamicDetails",
+    "pages/ordered/publish/publish",
+    "pages/ordered/comment/comment",
+    "pages/ordered/flowerRank/flowerRank",
+    "pages/ordered/teacherRank/teacherRank",
+    "pages/ordered/flowerContributionRank/flowerContributionRank",
+
+   
+    "pages/my/index/index",
+    "pages/my/wallet/wallet",
+    "pages/my/attendance/attendance",
+    "pages/my/flower/flower",
+    "pages/my/dynamics/dynamics",
+    "pages/my/flowerRules/flowerRules",
+    "pages/my/weixinService/weixinService",
+    "pages/my/shopping/shopping"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

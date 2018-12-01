@@ -1,0 +1,175 @@
+/* pages/my/flower/flower.wxss */
+
+page {
+  background-color: #f0f0f0;
+}
+
+/*头像部分  */
+
+.head_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  top: -35px;
+  left: 40%;
+  margin: 0px auto;
+}
+
+.head_content {
+  width: 91.5%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 170px;
+  left: 4.2%;
+  position: absolute;
+  top: 40px;
+}
+
+.head_background {
+  background-color: #0c9;
+  width: 100%;
+  height: 160px;
+}
+
+.NickName {
+  position: relative;
+  top: -40px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.parentsNick {
+  font-size: 16px;
+}
+
+.avatarUrl {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  float: left;
+}
+.aling_right{
+  width: 65%;
+}
+.rules {
+  font-size: 32rpx;
+  display: inline-block;
+  color: #0c9;
+  line-height: 2em;
+}
+/* .into{
+  font-size: 32rpx;
+  float: right;
+  color: #0c9;
+  line-height: 2em;
+} */
+.change {
+  display: inline-block;
+  text-align: right;
+}
+.into {
+  display: inline-block;
+  margin-left: 15rpx;
+  width: 16rpx;
+  height: 28rpx;
+  margin-bottom: -1px;
+}
+
+
+
+.name {
+  margin-left: 20rpx;
+  font-size: 36rpx;
+  display: inline-block;
+  line-height: 2em;
+  width: 58%;
+}
+.name1 {
+  margin-left: 20rpx;
+  font-size: 36rpx;
+  /* float: left; */
+  line-height: 2em;
+}
+.total {
+  font-size: 32rpx;
+  margin-left: 140rpx;
+  color: rgb(136, 136, 136);
+  /* float: left; */
+}
+
+.changeBaby {
+  padding: 30px 30rpx 25rpx 30px;
+  position: relative;
+  top: -10px;
+}
+
+.flower_image2 {
+  width: 18px;
+  height: 18px;
+  margin-right: 0px;
+  display: inline-block;
+}
+
+.itemName {
+  font-size: 14px;
+}
+
+.source {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.dataSource {
+  width: 18%;
+  display: inline-block;
+}
+
+.logList {
+  margin-top: 60px;
+}
+
+.logTitle {
+  background-color: white;
+}
+
+.logTitle2 {
+  background-color: #f9f9f9;
+}
+
+.titleName {
+  width: 33.33%;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+}
+
+.titleName1 {
+  width: 28%;
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 30rpx;
+  margin-bottom: 25rpx;
+  margin-top: -7px;
+}
+
+.titleName2 {
+  width: 20%;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25rpx;
+  margin-top: -7px;
+}
+
+.titleName3 {
+  width: 48%;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25rpx;
+  margin-top: -7px;
+}

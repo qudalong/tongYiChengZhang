@@ -1,0 +1,4 @@
+<!--pages/my/flowerRules/flowerRules.wxml-->
+<view>
+ <web-view src="{{url}}discover/FlowerDetails.do?userType=3"></web-view>
+</view>

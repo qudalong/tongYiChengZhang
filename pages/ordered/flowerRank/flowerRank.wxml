@@ -1,0 +1,205 @@
+<!--pages/ordered/flowerRank/flowerRank.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+    <view class="swiper-tab">
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">月度排行榜</view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">年度排行榜</view>
+      <view wx:if="{{currentTab==0}}" class='on1'> </view>
+      <view wx:if="{{currentTab==1}}" class='on2'> </view>
+    </view>
+
+    <view class="logo">
+      <image class="logo-avatar" mode="widthFix" src="/image/dynamic_rankings@3x.png" background-size="cover"></image>
+    </view>
+
+    <view class='user_content'>
+      <view class='user_photo1'>
+        <!-- {{curUserRank.photopath}} -->
+        <image mode="center" class="user_image1" src="{{curUserRank.photopath}}" background-size="cover"></image>
+      </view>
+      <view class='user_info1'>
+        <view>
+          <text class='teacherName'>{{curUserRank.name}}</text>
+        </view>
+        <text class='user_rank'>{{name}}榜{{curUserRank.flowernum}}朵小红花</text>
+      </view>
+      <view class='change'>
+        <text bindtap='teacherRank' class='to_teacher'>为老师冲榜</text>
+        <image class='into' src='/image/nav_btn_back@3x.png'></image>
+      </view>
+    </view>
+
+
+
+
+    <view class='item_lists'>
+      <view class='item_list1'>
+        <image class="flower_image" mode="aspectFit" src="/image/icon_ranking_list@3x.png" background-size="cover"></image>
+        <text class='name_text_left'>  上{{name}}红花榜</text>
+        <view class='name_text_right'>
+          <text class='name_text_righ2' bindtap='flower_rules'>规则</text>
+          <image class='into' src='/image/nav_btn_back@3x.png'></image>
+        </view>
+
+      </view>
+
+      <view class='item_list2'>
+
+        <view class='number_2'>
+          <view class='imgContainer2'>
+            <image class="img21" mode="scaleToFill" src="/image/rank_head_second_45@3x.png"> </image>
+            <image class="img22" mode="center" src='{{rank2.photopath}}' background-size="cover"></image>
+          </view>
+          <view class='rank_name2'>{{rank2.name}}</view>
+          <view class='flower_num2'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>{{rank2.flowernum}}
+          </view>
+        </view>
+
+        <view class='number_1'>
+          <view class='imgContainer1'>
+            <image class="img1" mode="scaleToFill" src="/image/rank_head_first_50@3x.png"> </image>
+            <image class="img2" mode="center" src="{{rank1.photopath}}" background-size="cover"></image>
+          </view>
+          <view class='rank_name'>{{rank1.name}} </view>
+          <view class='flower_num'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>{{rank1.flowernum}}
+          </view>
+        </view>
+
+        <view class='number_3'>
+          <view class='imgContainer3'>
+            <image class="img21" mode="scaleToFill" src="/image/rank_head_third_45@3x.png"> </image>
+            <image class="img22" mode="center" src="{{rank3.photopath}}" background-size="cover"></image>
+          </view>
+          <view class='rank_name3'>{{rank3.name}} </view>
+          <view class='flower_num3'>
+            <image class="flower_image2" mode="scaleToFill" src="/image/icon_red_flower@3x.png" background-size="cover"></image>{{rank3.flowernum}}
+          </view>
+        </view>
+
+        <block wx:if="{{name=='月'}}">
+          <view wx:if='{{getReward==0}}' bindtap='toGetMonthReward' id='{{getReward}}' class='get_rewards'>领取奖励</view>
+          <view wx:if='{{getReward==1}}' bindtap='toGetMonthReward' id='{{getReward}}' class='get_rewards'>领取奖励</view>
+        </block>
+        <block wx:if="{{name=='年'}}">
+          <view wx:if='{{getReward==0}}' bindtap='toGetYearReward' id='{{getReward}}' class='get_rewards'>领取奖励</view>
+          <view wx:if='{{getReward==1}}' bindtap='toGetYearReward' id='{{getReward}}' class='get_rewards'>领取奖励</view>
+        </block>
+
+        <view wx:if='{{getReward==2}}' class='get_rewards_gray'>领取奖励</view>
+
+
+      </view>
+
+    </view>
+
+    <view class='notice_content'>
+      <view class='item_list'>
+        <image class="flower_image" mode="aspectFit" src="/image/icon_ranking_list@3x.png" background-size="cover"></image>
+        <text class='name_text_left'>  本{{name}}红花榜</text>
+        <text class='name_text_right'></text>
+      </view>
+
+      <view class='view_item'>
+
+        <block wx:for="{{rtnData}}" wx:key="item">
+
+          <block wx:if="{{index==0}}">
+            <view class='item_content1'>
+              <view class='sort_num1'>{{item.sort}}</view>
+              <view class='user_photo'>
+                <view class='imgContainer3'>
+                  <image class="img21" mode="scaleToFill" src="/image/rank_head_first_50@3x.png"> </image>
+                  <image class="img22" mode="center" src="{{item.photopath}}" background-size="cover"></image>
+                </view>
+              </view>
+              <view class='user_info'>
+                <view class='view'>
+                  <text class='user_name_text2'>{{item.name}}</text>
+                </view>
+                <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+              </view>
+            </view>
+          </block>
+
+          <block wx:if="{{index==1}}">
+            <view class='item_content1'>
+              <view class='sort_num2'>{{item.sort}}</view>
+              <view class='user_photo'>
+                <view class='imgContainer3'>
+                  <image class="img21" mode="scaleToFill" src="/image/rank_head_second_45@3x.png"> </image>
+                  <image class="img22" mode="center" src="{{item.photopath}}" background-size="cover"></image>
+                </view>
+              </view>
+              <view class='user_info'>
+                <view class='view'>
+                  <text class='user_name_text2'>{{item.name}}</text>
+                </view>
+                <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+              </view>
+            </view>
+          </block>
+
+          <block wx:if="{{index==2}}">
+            <view class='item_content1'>
+              <view class='sort_num3'>{{item.sort}}</view>
+              <view class='user_photo'>
+                <view class='imgContainer3'>
+                  <image class="img21" mode="scaleToFill" src="/image/rank_head_third_45@3x.png"> </image>
+                  <image class="img22" mode="center" src="{{item.photopath}}" background-size="cover"></image>
+                </view>
+              </view>
+              <view class='user_info'>
+                <view class='view'>
+                  <text class='user_name_text2'>{{item.name}}</text>
+                </view>
+                <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+              </view>
+            </view>
+          </block>
+
+          <block wx:if="{{index > 2}}">
+            <view class='item_content1'>
+              <view class='sort_num'>{{item.sort}}</view>
+              <view class='user_photo'>
+                <image mode="center" class="user_image" src="{{item.photopath}}" background-size="cover"></image>
+              </view>
+              <view class='user_info'>
+                <view class='view'>
+                  <text class='user_name_text2'>{{item.name}}</text>
+                </view>
+                <text class='user_rank'>{{item.flowernum}}朵小红花</text>
+              </view>
+            </view>
+          </block>
+        </block>
+
+
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <image class='pop' src='/image/pop_reward_frame@3x.png'></image>
+  <image bindtap="powerDrawer" data-statu="close" class='icon_delet' src='/image/icon_delet@3x.png'></image>
+  <!--drawer content-->
+  <view class="drawer_content">
+    <view class='title2'>恭喜你获得贝豆</view>
+    <view class='red_flowers'>
+      <image class='icon_small_red_flower' src='/image/icon_beidou@3x.png'></image>
+      <image class='icon_small_red_flower' src='/image/icon_beidou@3x.png'></image>
+      <image class='icon_small_red_flower' src='/image/icon_beidou@3x.png'></image>
+      <!-- <block wx:for="{{signFlowerNum}}" wx:key="item">
+        <image wx:if="{{index <=2 }}" class='icon_small_red_flower' src='/image/icon_beidou@3x.png'></image>
+      </block> -->
+    </view>
+    <view class='add_num'>+{{signFlowerNum}}</view>
+  </view>
+</view>

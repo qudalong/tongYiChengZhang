@@ -1,0 +1,374 @@
+/* pages/my/index/index.wxss */
+
+page {
+  background-color: #f0f0f0;
+}
+
+/*头像部分  */
+
+.head_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  top: -35px;
+  left: 35%;
+  margin: 0px auto;
+}
+
+.head_content {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 170px;
+  left: 5%;
+  position: absolute;
+  top: 50px;
+}
+
+.head_background {
+  background-color: #0c9;
+  width: 100%;
+  height: 160px;
+}
+
+.NickName {
+  position: relative;
+  top: -40px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.parentsNick {
+  font-size: 36rpx;
+}
+
+.isBind {
+  font-size: 12px;
+  margin-left: 10rpx;
+  color: #0c9;
+  height: 30px;
+  width: 30px;
+  margin-bottom: -8px;
+}
+
+.babyImag {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: relative;
+  float: left;
+  margin-bottom: -5px;
+}
+
+.babyName {
+  margin-left: 10px;
+  font-size: 30rpx;
+  line-height: 3.5em;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  width: 50%;
+}
+
+.change {
+  display: inline-block;
+  text-align: right;
+}
+
+.changeBaby {
+  padding: 20px;
+  position: relative;
+  top: -40px;
+}
+
+.into {
+  display: inline-block;
+  margin-left: 20rpx;
+  width: 16rpx;
+  height: 25rpx;
+  margin-bottom: -1px;
+}
+
+/*我的钱包部分  */
+
+.MyWallet {
+  width: 90%;
+  margin: 0 auto;
+  height: 120px;
+  background-color: #fff;
+  margin-top: 70px;
+  border-radius: 5px;
+}
+
+.wallet {
+  float: left;
+  height: 115px;
+  width: 48%;
+  margin: 0px;
+}
+
+.walletTitle {
+  text-align: center;
+  margin-top: 15px;
+  /* display: inline-block; *//* margin-left: 30%; */
+  font-size: 16px;
+}
+
+.count {
+  text-align: center;
+  font-size: 14px;
+  /* margin-left: 30%; *//* display: inline-block; */
+  color: #888;
+}
+
+.wallet_lable {
+  padding: 4rpx 13px;
+  margin: 0rpx 20% 10px 20%;
+  font-size: 32rpx;
+  background-image: url('https://b.lebeitong.com/img/mobile/smallProgram/icon_my_wallet@3x.png');
+  background-size: 100%;
+  color: #fff;
+  text-align: center;
+  border-radius: 70px;
+}
+
+.flower_lable {
+  padding: 4rpx 13px;
+  margin: 0rpx 20% 10px 20%;
+  font-size: 32rpx;
+  background-image: url('https://b.lebeitong.com/img/mobile/smallProgram/icon_safflower_detail@3x.png');
+  background-size: 100%;
+  color: #fff;
+  text-align: center;
+  border-radius: 70px;
+}
+
+/*menu  */
+
+.list {
+  width: 90%;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.view {
+  height: 17px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.baby {
+  float: left;
+  height: 120px;
+  width: 48%;
+  margin: 0% 0 0% 0%;
+  border-bottom: 0.5px solid #eee;
+}
+
+.baby_left {
+  float: left;
+  height: 120px;
+  width: 48%;
+  margin: 0% 0 0% 0%;
+  border-right: 0.5px solid #eee;
+  border-bottom: 0.5px solid #eee;
+}
+
+/*button*/
+
+.btn {
+  width: 80%;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 40rpx 10%;
+  background: #000;
+  color: #fff;
+}
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #fafafa;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+
+.drawer_title {
+  padding: 15px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+}
+
+.drawer_content {
+  height: 210px;
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+
+.btn_ok {
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #e8e8ea;
+  color: #3cc51f;
+}
+
+.top {
+  padding-top: 8px;
+}
+
+.bottom {
+  padding-bottom: 8px;
+}
+
+.title {
+  height: 30px;
+  line-height: 30px;
+  width: 160rpx;
+  text-align: center;
+  display: inline-block;
+  font: 300 28rpx/30px "microsoft yahei";
+}
+
+.input_base {
+  border: 2rpx solid #ccc;
+  padding-left: 10rpx;
+  margin-right: 50rpx;
+}
+
+.input_h30 {
+  height: 30px;
+  line-height: 30px;
+}
+
+.input_h60 {
+  height: 60px;
+}
+
+.input_view {
+  font: 12px "microsoft yahei";
+  background: #fff;
+  color: #000;
+  line-height: 30px;
+}
+
+input {
+  font: 12px "microsoft yahei";
+  background: #fff;
+  color: #000;
+}
+
+radio {
+  margin-right: 20px;
+}
+
+.grid {
+  display: -webkit-box;
+  display: box;
+}
+
+.col-0 {
+  -webkit-box-flex: 0;
+  box-flex: 0;
+}
+
+.col-1 {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 底部导航 */
+
+.tabBarBottom {
+  height: 100rpx;
+  margin-top: 265px;
+}
+
+.tabBar {
+  padding: 10rpx 30rpx 10rpx 30rpx;
+  width: 92%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border-top: 0.1rpx solid rgb(245, 245, 245);
+}
+
+.tabBarText {
+  font-size: 24rpx;
+  height: 5px;
+}
+
+.center {
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+  padding: 5rpx;
+}
+
+.public {
+  display: inline-block;
+  width: 28%;
+  text-align: center;
+}
+
+.my {
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+}
+
+.centerImage {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  margin-bottom: -8px;
+}
+
+.publicImage {
+  width: 60px;
+  height: 40px;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+
+.myImage {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  margin-bottom: -8px;
+}

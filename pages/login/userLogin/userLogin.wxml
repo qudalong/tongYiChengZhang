@@ -1,0 +1,31 @@
+<!--pages/login/userLogin/userLogin.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="container">
+    <view class="logo">
+      <image class="logo-avatar" src="/image/logo@3x.png" background-size="cover"></image>
+      <text class="edition_text">{{edition}}</text>
+    </view>
+    <input name="imsi" type="text" wx:if="{{1 > 2}}" value='{{imsi}}'></input>
+    <view class='phone'>
+      <input class='phoneInput' type='number' name='loginName' value='{{phoneValue}}' bindinput="bindPhoneInput" maxlength='11' placeholder='输入手机号' />
+      <image wx:if="{{phoneInputValue.length > 0}}" bindtap="clearPhoneInput" class="icon_delet" src="/image/icon_delet@3x.png" background-size="cover"></image>
+    </view>
+
+    <view class='verification_code'>
+      <input class='codeInput' type='number' name='code' bindinput="bindCodeInput" value='{{codeValue}}' maxlength='4' placeholder='输入验证码' />
+
+      <!-- <image wx:if="{{codeInputValue.length > 0}}" bindtap="clearCodeInput" class="icon_delet" src="/image/icon_delet@3x.png" background-size="cover"></image> -->
+      <text wx:if="{{ifShowGetCode && phoneInputValue.length ==11}}" class='get_code_text' bindtap="getCode" id='{{phoneInputValue}}'>获取验证码</text>
+
+      <text wx:if="{{phoneInputValue.length <11 && !ifShowReacquireTime && !ifShowReacquire }}" class='reset_code_text' id='{{phoneInputValue}}'>获取验证码</text>
+
+      <text wx:if="{{ifShowReacquireTime}}" class='reset_code_text'>重新获取({{last_time}}s)</text>
+      <text wx:if="{{ifShowReacquire}}" class='get_code_text' bindtap="getCode" id='{{phoneInputValue}}'>重新获取</text>
+    </view>
+
+    <button wx:if="{{phoneInputValue.length ==11 && codeInputValue.length > 0}}" class='login_button' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" formType="submit"> 登录 </button>
+
+    <button wx:else class='gray_button' size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 登录 </button>
+
+  </view>
+</form>

@@ -1,0 +1,82 @@
+<!--pages/my/dynamics/dynamics.wxml-->
+<view class="container">
+  <view class='notice_content'>
+    <block wx:for="{{dynamicList}}" wx:key="item">
+      <view class='view_item' wx:if="{{item.sender!=null}}">
+
+        <view class='item_content1' bindtap='detail_page' id='{{item.dynamicid}}'>
+          <view class='user_photo'>
+          <!--  {{item.senderPhoto}}-->
+            <image mode="center" class="user_image" src="{{item.senderPhoto}}" background-size="cover"></image>
+          </view>
+          <view class='user_info'>
+            <view class='view'>
+              <text class='user_name_text'>{{item.sender}}</text>
+            </view>
+            <text class='publish_time'>{{item.stime}}</text>
+          </view>
+        </view>
+
+        <view class='item_content2' wx:if="{{item.content.length!=0}}" bindtap='detail_page' id='{{item.dynamicid}}'>
+          {{item.content}}
+        </view>
+
+        <view wx:if="{{item.res.length!=0}}" class='item_content4' bindtap='detail_page' id='{{item.dynamicid}}'>
+          <block wx:if="{{item.res.length==1}}">
+            <block wx:for='{{item.res}}' wx:for-item="item2" wx:key="item2">
+              <image wx:if="{{item2.resType == 1}}" class="content_image1" mode="center" src="{{item2.thumbpath}}" background-size="cover"></image>
+                <view wx:if="{{item2.resType == 2}}" class='video_image' style='background-image: url({{item2.path}}?vframe/jpg/offset/2/w/420/h300);background-size: 100%;'>
+                  <image mode='scaleToFill' src='/image/video.png' class="content_image11"></image>
+                </view>
+            </block>
+          </block>
+          <block wx:if="{{item.res.length==2}}">
+            <block wx:for='{{item.res}}' wx:for-item="item2" wx:key="item2">
+              <image class="content_image2" mode="center" src="{{item2.thumbpath}}" background-size="cover"></image>
+
+            </block>
+          </block>
+          <block wx:if="{{item.res.length >= 3 && item.res.length <= 9}}">
+            <block wx:for='{{item.res}}' wx:for-item="item2" wx:key="item2">
+
+              <view  wx:if="{{index==0 || index==3 || index==6}}" class="weui-uploader__file add_iamge2" style="position: relative;margin-right: 0px;">
+                  <image wx:if="{{item2.resType == 1}}" class="weui-uploader__img" data-t="maker" bindtap="previewImage" src="{{item2.thumbpath}}" mode="center" />
+                </view>
+                <view wx:else class="weui-uploader__file add_iamge1" style="position: relative;margin-right: 0px;">
+                  <image wx:if="{{item2.resType == 1}}" class="weui-uploader__img" data-t="maker" bindtap="previewImage" src="{{item2.thumbpath}}" mode="center" />
+                </view>
+                
+              <!-- <image class="content_image3" mode="center" src="{{item2.thumbpath}}" background-size="cover"></image> -->
+
+
+
+
+            </block>
+          </block>
+        </view>
+        <view class='clear'></view>
+        <view class='item_content5'>
+          <button class='share' open-type="share" id='{{item.dynamicid}}'>
+            <image class="item_image" mode="scaleToFill" src="/image/icon_share@3x.png"></image>
+            <text class="item_name"> 分享</text>
+          </button>
+          <view class='more' bindtap='select_more' id='{{index}}'>
+            <image class="item_image" mode="scaleToFill" src="/image/icon_more@3x.png"></image>
+            <text class="item_name">  更多</text>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_title">分享提示</view>
+  <button class="btn_ok" bindtap="powerDrawer" open-type="share" data-statu="close">确定分享</button>
+</view>

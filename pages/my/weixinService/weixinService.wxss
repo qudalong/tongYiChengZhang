@@ -1,0 +1,16 @@
+/* pages/my/weixinService/weixinService.wxss */
+page{
+    background-image: url('https://tycz.qiniudn.com/kaitongweicin@3x.png');
+    background-size:100% 100%;
+}
+
+.login_button {
+  width: 60%;
+  position: fixed;
+  text-align: center;
+  bottom: 8%;
+  left: 20%;
+  border-radius: 44px;
+  color: white; 
+  background-color: #16D0AC;
+}

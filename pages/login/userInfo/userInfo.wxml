@@ -1,0 +1,69 @@
+<!--pages/login/userInfo/userInfo.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="container">
+    <template data="{{title: 'picker'}}" />
+
+    <view class="page-body">
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd2">
+              <view class="weui-label">宝宝姓名</view>
+            </view>
+            <view class="weui-cell__bd2">
+              <view class="">{{studentName}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+
+            <view class="weui-cell__hd2">
+              <view class="weui-label">宝宝性别</view>
+            </view>
+            <view class="weui-cell__bd2">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="weui-input">{{array[index]}} ></view>
+              </picker>
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd2">
+              <view class="weui-label">宝宝生日</view>
+            </view>
+            <view class="weui-cell__bd2">
+              <picker mode="date" value="{{birthday}}" start="1979-09-01" end="2099-09-01" bindchange="bindDateChange">
+                <view class="weui-input weui-input_text">{{birthday}}></view>
+              </picker>
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd2">
+              <view class="weui-label">和宝宝关系</view>
+            </view>
+            <view class="weui-cell__bd2">
+              <picker bindchange="bindPickerChange" value="{{index2}}" range="{{relationList}}">
+                <view class="weui-input">{{relationList[index2]}} ></view>
+              </picker>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <text class='tips'>
+        您的个人信息是为了完善幼儿园档案，请正确填写，相关资料乐贝通会严格保密
+    </text>
+
+    <button class='login_button' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" formType="submit"> 立即进入 </button>
+    <template />
+  </view>
+</form>

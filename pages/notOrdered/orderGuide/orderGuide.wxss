@@ -1,0 +1,150 @@
+/* pages/notOrdered/orderGuide/orderGuide.wxss */
+
+.container {
+  padding: 0rpx 0;
+}
+
+.form {
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-top: 100rpx;
+}
+
+.logo-avatar {
+  height: 300rpx;
+}
+
+.icon_delet {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 5rpx;
+  align-items: right;
+  display: inline-block;
+}
+
+.edition_text {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.get_code_text {
+  color: #0c9;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.taps_text {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+}
+
+.reset_code_text {
+  color: #aaa;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.phone {
+  align-items: left;
+  margin-top: 60px;
+  width: 85%;
+}
+
+.phoneInput {
+  display: inline-block;
+  width: 90%;
+}
+
+.codeInput {
+  display: inline-block;
+  width: 62%;
+}
+
+.verification_code {
+  align-items: left;
+  margin-top: 20px;
+  width: 85%;
+}
+
+.page-head-line {
+  width: 85%;
+  height: 3rpx;
+  background-color: #aaa;
+  margin-top: 10px;
+}
+
+.login_button {
+  width: 50%;
+  margin-top: 20px;
+  border-radius: 44px;
+  color: white;
+  background-color: rgb(0, 204, 153);
+}
+
+/* 底部导航 */
+
+.tabBarBottom {
+  height: 100rpx;
+  margin-top: 10px;
+}
+
+.tabBar {
+  padding: 10rpx 30rpx 10rpx 30rpx;
+  width: 92%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border-top: 0.1rpx solid rgb(245, 245, 245);
+}
+
+.tabBarText {
+  font-size: 24rpx;
+  height: 5px;
+}
+
+.center {
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+  padding: 5rpx;
+}
+
+.public {
+  display: inline-block;
+  width: 28%;
+  text-align: center;
+}
+
+.my {
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+}
+
+.centerImage {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  margin-bottom: -8px;
+}
+
+.publicImage {
+  width: 60px;
+  height: 40px;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+
+.myImage {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  margin-bottom: -8px;
+}

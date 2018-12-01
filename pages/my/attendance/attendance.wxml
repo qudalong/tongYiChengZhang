@@ -1,0 +1,87 @@
+<!--pages/my/attendance/attendance.wxml-->
+<view>
+  <!--考勤  -->
+  <view class='card alignCenter attendenceDayCard'>
+    <view>
+      <view>
+        <text class='day'>{{total}}天</text>
+      </view>
+      <view>
+        <text class="tips">本月出勤天数</text>
+      </view>
+    </view>
+  </view>
+  <!--考勤详情  -->
+  <!-- 日期选择器 -->
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <!-- <view class="weui-cell__hd2">
+        <view class="weui-label"></view>
+      </view> -->
+      <text class='to_left' bindtap='leftDate'>{{left}}</text>
+      <view class="weui-cell__bd2">
+        <picker mode="date" value="{{nowData}}" start="1979-09-01" end="2099-09-01" bindchange="bindDateChange">
+          <view class="weui-input weui-input_text">{{nowData}}</view>
+        </picker>
+      </view>
+      <text class='to_right' bindtap='rightDate'>{{right}}</text>
+    </view>
+  </view>
+
+  <!-- <view class='changeDate'>
+      <text class='to_left' bindtap='leftDate'>{{left}}</text>
+      <view class='normalPadding1 alignCenter'>
+        <picker mode="date" value="{{nowData}}" start="1979-09-01" end="2099-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            {{nowData}}
+          </view>
+        </picker>
+      </view>
+      <text class='to_right' bindtap='rightDate'>{{right}}</text>
+    </view> -->
+
+  <view class='card'>
+    <view class='normalPadding attendTime'>
+      当日考勤
+    </view>
+
+    <block wx:for="{{rtnData}}" wx:key wx:for-item="item">
+      <view url="" class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="textTips">{{item.cardType}}</view>
+          <view class="weui-media-box__desc">
+            <block wx:if="{{item.userName==null}}">
+              <view>
+                <text class='unattend'>{{item.content}}</text>
+              </view>
+            </block>
+
+            <block wx:else>
+              <view>
+                <text class='attendTime'>{{item.cardTime}}</text>
+                <text wx:if="{{item.temperatureType==1}}" class='temper1'>{{item.attendanceContent}}</text>
+                <text wx:if="{{item.temperatureType==2}}" class='temper2'>{{item.attendanceContent}}</text>
+                <text wx:if="{{item.temperatureType==3}}" class='temper3'>{{item.attendanceContent}}</text>
+                <text wx:if="{{item.temperatureType==4}}" class='temper4'>{{item.attendanceContent}}</text>
+              </view>
+              <view>{{item.content}}</view>
+            </block>
+          </view>
+        </view>
+        <block wx:if="{{item.userName==null}}">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="/image/icon_gray_flower@3x.png" />
+          </view>
+        </block>
+        <block wx:else>
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.attendancePhoto}}" />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class='textTips normalPadding2'>
+    友情提示考勤状态基于打卡数据只能计算，请规范打卡行为，避免判断有误！
+  </view>
+</view>
